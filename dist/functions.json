@@ -1,0 +1,509 @@
+{
+    "functions": [
+        {
+            "description": "J Similar IDs - Search for similar data by ids",
+            "id": "SIMILAR",
+            "name": "SIMILAR",
+            "parameters": [
+                {
+                    "description": "JAI Auth Key",
+                    "name": "auth_key",
+                    "type": "string"
+                },
+                {
+                    "description": "Collection to Search",
+                    "name": "collection",
+                    "type": "string"
+                },
+                {
+                    "description": "Ids to search",
+                    "dimensionality": "matrix",
+                    "name": "id_input",
+                    "type": "number"
+                },
+                {
+                    "description": "Number of similars to retrieve - default=5",
+                    "name": "top_k",
+                    "optional": true,
+                    "type": "number"
+                },
+                {
+                    "description": "Valid JAI Environment for the inserted Auth Key",
+                    "name": "env",
+                    "optional": true,
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "dimensionality": "matrix",
+                "type": "number"
+            }
+        },
+        {
+            "description": "J Similar Data - Search for similar data with new data as input",
+            "id": "SIMILARDATA",
+            "name": "SIMILARDATA",
+            "parameters": [
+                {
+                    "description": "JAI Auth Key",
+                    "name": "auth_key",
+                    "type": "string"
+                },
+                {
+                    "description": "Collection to perform Search",
+                    "name": "collection",
+                    "type": "string"
+                },
+                {
+                    "description": "Model inputs",
+                    "dimensionality": "matrix",
+                    "name": "input_data",
+                    "type": "string"
+                },
+                {
+                    "description": "Number of similars to retrieve - default=",
+                    "name": "top_k",
+                    "optional": true,
+                    "type": "number"
+                },
+                {
+                    "description": "Valid JAI Environment for the inserted Auth Key",
+                    "name": "env",
+                    "optional": true,
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "dimensionality": "matrix",
+                "type": "number"
+            }
+        },
+        {
+            "description": "J Recommendation IDs - Recommendation by Ids",
+            "id": "RECOMMEND",
+            "name": "RECOMMEND",
+            "parameters": [
+                {
+                    "description": "JAI Auth Key",
+                    "name": "auth_key",
+                    "type": "string"
+                },
+                {
+                    "description": "Base Collection to Recommend (e.g. Products, in a Products to Users Recommendation)",
+                    "name": "collection",
+                    "type": "string"
+                },
+                {
+                    "description": "Ids to recommend to (e.g. User ID, in a Products to Users Recommendation)",
+                    "dimensionality": "matrix",
+                    "name": "id_input",
+                    "type": "number"
+                },
+                {
+                    "description": "Number of recommendations to retrieve - default=5",
+                    "name": "top_k",
+                    "optional": true,
+                    "type": "number"
+                },
+                {
+                    "description": "Valid JAI Environment for the inserted Auth Key",
+                    "name": "env",
+                    "optional": true,
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "dimensionality": "matrix",
+                "type": "number"
+            }
+        },
+        {
+            "description": "J Predict - Perform inference on collection with db_type Supervised",
+            "id": "PREDICT",
+            "name": "PREDICT",
+            "parameters": [
+                {
+                    "description": "JAI Auth Key",
+                    "name": "auth_key",
+                    "type": "string"
+                },
+                {
+                    "description": "Collection to perform Inference",
+                    "name": "collection",
+                    "type": "string"
+                },
+                {
+                    "description": "Model inputs",
+                    "dimensionality": "matrix",
+                    "name": "input_data",
+                    "type": "string"
+                },
+                {
+                    "description": "Whether to return probabilities or just the most probable class (for classification models only). Default: False",
+                    "name": "predict_proba",
+                    "optional": true,
+                    "type": "boolean"
+                },
+                {
+                    "description": "Whether to return column names or just the values. Default: False",
+                    "name": "include_headers",
+                    "optional": true,
+                    "type": "boolean"
+                },
+                {
+                    "description": "Whether to return the response column id Default: False",
+                    "name": "include_response_id",
+                    "optional": true,
+                    "type": "boolean"
+                },
+                {
+                    "description": "Valid JAI Environment for the inserted Auth Key",
+                    "name": "env",
+                    "optional": true,
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "dimensionality": "matrix",
+                "type": "string"
+            }
+        },
+        {
+            "description": "J Fields - Retrieve collection fields",
+            "id": "FIELDS",
+            "name": "FIELDS",
+            "parameters": [
+                {
+                    "description": "JAI Auth Key",
+                    "name": "auth_key",
+                    "type": "string"
+                },
+                {
+                    "description": "Collection to query fields",
+                    "name": "collection",
+                    "type": "string"
+                },
+                {
+                    "description": "Valid JAI Environment for the inserted Auth Key",
+                    "name": "env",
+                    "optional": true,
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "dimensionality": "matrix",
+                "type": "string"
+            }
+        },
+        {
+            "description": "J Ids - Retrieve collection IDs",
+            "id": "IDS",
+            "name": "IDS",
+            "parameters": [
+                {
+                    "description": "JAI Auth Key",
+                    "name": "auth_key",
+                    "type": "string"
+                },
+                {
+                    "description": "Collection to query ids",
+                    "name": "collection",
+                    "type": "string"
+                },
+                {
+                    "description": "Valid JAI Environment for the inserted Auth Key",
+                    "name": "env",
+                    "optional": true,
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "dimensionality": "matrix",
+                "type": "number"
+            }
+        },
+        {
+            "description": "J Info",
+            "id": "INFO",
+            "name": "INFO",
+            "parameters": [
+                {
+                    "description": "JAI Auth Key",
+                    "name": "auth_key",
+                    "type": "string"
+                },
+                {
+                    "description": "Valid JAI Environment for the inserted Auth Key",
+                    "name": "env",
+                    "optional": true,
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "dimensionality": "matrix",
+                "type": "string"
+            }
+        },
+        {
+            "description": "J Status",
+            "id": "STATUS",
+            "name": "STATUS",
+            "parameters": [
+                {
+                    "description": "JAI Auth Key",
+                    "name": "auth_key",
+                    "type": "string"
+                },
+                {
+                    "description": "Collection to check status",
+                    "name": "collection",
+                    "type": "string"
+                },
+                {
+                    "description": "Valid JAI Environment for the inserted Auth Key",
+                    "name": "env",
+                    "optional": true,
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "dimensionality": "matrix",
+                "type": "string"
+            }
+        },
+        {
+            "description": "J Table Setup - Self Supervised",
+            "id": "FITTABLE",
+            "name": "FITTABLE",
+            "parameters": [
+                {
+                    "description": "JAI Auth Key",
+                    "name": "auth_key",
+                    "type": "string"
+                },
+                {
+                    "description": "JAI Collection Name",
+                    "name": "collection",
+                    "type": "string"
+                },
+                {
+                    "description": "Table data",
+                    "dimensionality": "matrix",
+                    "name": "input_data",
+                    "type": "string"
+                },
+                {
+                    "description": "Valid JAI Environment for the inserted Auth Key",
+                    "name": "env",
+                    "optional": true,
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "dimensionality": "matrix",
+                "type": "string"
+            }
+        },
+        {
+            "description": "J Table Setup - Supervised Classification",
+            "id": "FITCLASSIFICATION",
+            "name": "FITCLASSIFICATION",
+            "parameters": [
+                {
+                    "description": "JAI Auth Key",
+                    "name": "auth_key",
+                    "type": "string"
+                },
+                {
+                    "description": "JAI Collection Name",
+                    "name": "collection",
+                    "type": "string"
+                },
+                {
+                    "description": "Table data - including the label",
+                    "dimensionality": "matrix",
+                    "name": "input_data",
+                    "type": "string"
+                },
+                {
+                    "description": "Label (y) column name",
+                    "name": "label_column_name",
+                    "type": "string"
+                },
+                {
+                    "description": "Whether to overwrite if a collection with the same name already exists. Default: False",
+                    "name": "overwrite",
+                    "optional": true,
+                    "type": "boolean"
+                },
+                {
+                    "description": "Whether to perform stratified train/test split or not - Default: True",
+                    "name": "stratified",
+                    "optional": true,
+                    "type": "boolean"
+                },
+                {
+                    "description": "% of the data to use for validation and evaluation (test) - Ex: test_size=0.2 means 60% of data for training, 20% for validation, 20% for evaluation - Default: 0.1",
+                    "name": "test_size",
+                    "optional": true,
+                    "type": "number"
+                },
+                {
+                    "description": "Valid JAI Environment for the inserted Auth Key",
+                    "name": "env",
+                    "optional": true,
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "type": "string"
+            }
+        },
+        {
+            "description": "J Table Setup - Supervised Regression",
+            "id": "FITREGRESSION",
+            "name": "FITREGRESSION",
+            "parameters": [
+                {
+                    "description": "JAI Auth Key",
+                    "name": "auth_key",
+                    "type": "string"
+                },
+                {
+                    "description": "JAI Collection Name",
+                    "name": "collection",
+                    "type": "string"
+                },
+                {
+                    "description": "Table data - including the label",
+                    "dimensionality": "matrix",
+                    "name": "input_data",
+                    "type": "string"
+                },
+                {
+                    "description": "Label (y) column name",
+                    "name": "label_column_name",
+                    "type": "string"
+                },
+                {
+                    "description": "Whether to overwrite if a collection with the same name already exists. Default: False",
+                    "name": "overwrite",
+                    "optional": true,
+                    "type": "boolean"
+                },
+                {
+                    "description": "% of the data to use for validation and evaluation (test) - Ex: test_size=0.2 means 60% of data for training, 20% for validation, 20% for evaluation - Default: 0.1",
+                    "name": "test_size",
+                    "optional": true,
+                    "type": "number"
+                },
+                {
+                    "description": "Valid JAI Environment for the inserted Auth Key",
+                    "name": "env",
+                    "optional": true,
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "type": "string"
+            }
+        },
+        {
+            "description": "J Table Setup - Supervised Forecast",
+            "id": "FITFORECAST",
+            "name": "FITFORECAST",
+            "parameters": [
+                {
+                    "description": "JAI Auth Key",
+                    "name": "auth_key",
+                    "type": "string"
+                },
+                {
+                    "description": "JAI Collection Name",
+                    "name": "collection",
+                    "type": "string"
+                },
+                {
+                    "description": "Table data - including the label",
+                    "dimensionality": "matrix",
+                    "name": "input_data",
+                    "type": "string"
+                },
+                {
+                    "description": "Label (y) column name",
+                    "name": "label_column_name",
+                    "type": "string"
+                },
+                {
+                    "name": "date_column",
+                    "type": "any"
+                },
+                {
+                    "description": "Whether to overwrite if a collection with the same name already exists. Default: False",
+                    "name": "overwrite",
+                    "optional": true,
+                    "type": "boolean"
+                },
+                {
+                    "description": "% of the data to use for validation and evaluation (test) - Ex: test_size=0.2 means 60% of data for training, 20% for validation, 20% for evaluation - Default: 0.1",
+                    "name": "test_size",
+                    "optional": true,
+                    "type": "number"
+                },
+                {
+                    "description": "Valid JAI Environment for the inserted Auth Key",
+                    "name": "env",
+                    "optional": true,
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "type": "string"
+            }
+        },
+        {
+            "description": "J Table Setup - Create Text Representations",
+            "id": "FITTEXT",
+            "name": "FITTEXT",
+            "parameters": [
+                {
+                    "description": "JAI Auth Key",
+                    "name": "auth_key",
+                    "type": "string"
+                },
+                {
+                    "description": "JAI Collection Name",
+                    "name": "collection",
+                    "type": "string"
+                },
+                {
+                    "description": "Text data, including an id column",
+                    "dimensionality": "matrix",
+                    "name": "input_data",
+                    "type": "string"
+                },
+                {
+                    "description": "NLP Model - any model from huggingface model hub. Default: \"sentence-transformers/all-mpnet-base-v2\"",
+                    "name": "nlp_model",
+                    "optional": true,
+                    "type": "string"
+                },
+                {
+                    "description": "Whether to overwrite if a collection with the same name already exists. Default: False",
+                    "name": "overwrite",
+                    "optional": true,
+                    "type": "boolean"
+                },
+                {
+                    "description": "Valid JAI Environment for the inserted Auth Key",
+                    "name": "env",
+                    "optional": true,
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "type": "string"
+            }
+        }
+    ]
+}
